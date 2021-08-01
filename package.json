@@ -6,7 +6,11 @@
     "test": "NODE_ENV=test npx jest -i",
     "build": "NODE_ENV=production npx tsc --outDir dist",
     "start": "NODE_ENV=production NODE_TLS_REJECT_UNAUTHORIZED=0 node dist/server.js",
-    "dev": "NODE_ENV=development npx nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/server.ts\""
+    "dev": "NODE_ENV=development npx nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/server.ts\"",
+    "postinstall": "tsc",
+    "watch-node": "nodemon dist/index.js",
+    "watch-ts": "tsc -w",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +40,7 @@
   "directories": {
     "test": "tests"
   },
+  "engines": { "node": "14.16.1" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DanielThiessen25/RepoProvas-Back.git"
