@@ -6,11 +6,13 @@ import "reflect-metadata";
 
 import connectDatabase from "./database";
 
-import * as userController from "./controllers/userConroller";
+import * as examController from "./controllers/examController";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.post("/enviar", examController.createExam);
 
 export async function init () {
   await connectDatabase();
