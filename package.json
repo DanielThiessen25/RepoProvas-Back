@@ -1,7 +1,6 @@
 {
   "name": "typescript-back-template",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test npx jest -i",
@@ -33,5 +32,17 @@
     "pg": "^8.6.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.34"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielThiessen25/RepoProvas-Back.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DanielThiessen25/RepoProvas-Back/issues"
+  },
+  "homepage": "https://github.com/DanielThiessen25/RepoProvas-Back#readme",
+  "description": ""
 }
