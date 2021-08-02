@@ -16,3 +16,13 @@ export async function createExam (exam: ExamCreate) {
   await getRepository(Exam).save(newExam);
   return newExam;
 }
+
+export async function teacherIdExams (teacherid : number){
+  const exams = await getRepository(Exam).find({
+    where: {
+      teacherid: teacherid
+  }
+  });
+  return exams.length;
+
+}
