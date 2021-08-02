@@ -12,9 +12,13 @@ export async function createExam(req: Request, res: Response) {
     let categoryId = await categoryService.getCategory(category);
     let teacherId = await teacherService.getTeacher(teacher);
     let subjectId = await subjectService.getSubject(subject);
+    console.log(subjectId);
+    console.log(teacherId);
+
     let exam = {
-    name:name, subjectId:subjectId, link:url, categoryId:categoryId, teacherId:teacherId
+    name:name, subjectid:subjectId, link:url, categoryid:categoryId, teacherid:teacherId
     };
+    console.log(exam);
     await examService.createExam(exam);
     return res.sendStatus(201);
   } catch (err) {

@@ -5,10 +5,10 @@ import Exam from "../entities/Exam";
 
 interface ExamCreate {
     name:string;
-    subjectId: number;
+    subjectid: number;
     link: string;
-    categoryId: number;
-    teacherId: number;
+    categoryid: number;
+    teacherid: number;
 }
 
 export async function createExam (exam: ExamCreate) {
