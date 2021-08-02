@@ -21,6 +21,5 @@ export async function getAllTeachers() {
         const qtd = await examService.teacherIdExams(id[i].id);
         object.push({id: id[i].id, name: id[i].name, qtd: qtd});
     }
-    
     return object;
 }

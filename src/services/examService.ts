@@ -24,5 +24,14 @@ export async function teacherIdExams (teacherid : number){
   }
   });
   return exams.length;
-
 }
+
+export async function subjectIdExams (subjectid : number){
+  const exams = await getRepository(Exam).find({
+    where: {
+      subjectid: subjectid
+  }
+  });
+  return exams.length;
+}
+
