@@ -7,7 +7,7 @@ import * as teacherService from "../services/teacherService";
 
 
 export async function createExam(req: Request, res: Response) {
-  /*try {
+  try {
     let {name, category, subject, teacher, url} = req.body;
     let categoryId = await categoryService.getCategory(category);
     let teacherId = await teacherService.getTeacher(teacher);
@@ -16,16 +16,9 @@ export async function createExam(req: Request, res: Response) {
         name:name, subjectId:subjectId, link:url, categoryId:categoryId, teacherId:teacherId
     };
     await examService.createExam(exam);
-    res.sendStatus(201);
+    return res.sendStatus(201);
   } catch (err) {
     console.error(err);
-    res.sendStatus(500);
+    return res.sendStatus(500);
   }
-  */
- try{
-   return res.sendStatus(201);
- }
- catch(err){
-   return res.sendStatus(500);
- }
 }
