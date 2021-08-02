@@ -9,5 +9,5 @@ export default class Subject {
   name: string;
 
   @Column()
-  periodId: number;
+  periodid: number;
 }

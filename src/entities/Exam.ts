@@ -9,14 +9,14 @@ export default class Exam {
   name: string;
 
   @Column()
-  subjectId: number;
+  subjectid: number;
 
   @Column()
   link: string;
 
   @Column()
-  categoryId: number;
+  categoryid: number;
 
   @Column()
-  teacherId: number;
+  teacherid: number;
 }
