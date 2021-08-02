@@ -13,3 +13,9 @@ export async function getSubject(subjectName: string) {
     return id[0].id;
 }
 
+export async function getAllSubjects() {
+    const id = await getRepository(Subject).find({});
+    return id;
+}
+
+
