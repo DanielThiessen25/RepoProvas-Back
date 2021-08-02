@@ -4,6 +4,10 @@ if (process.env.NODE_ENV === 'production' && process.env.DATABASE_URL.indexOf("s
   process.env.DATABASE_URL += "?sslmode=require";
 }
 
+if (process.env.NODE_ENV === 'test') {
+  console.log(`Utilizando o banco de dados de testes`);
+} 
+
 export default async function connect () {
   const connectionManager = await getConnectionManager();
   const connection = connectionManager.create({
