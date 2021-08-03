@@ -40,7 +40,6 @@ export async function subjectIdExams (subjectid : number){
 }
 
 export async function getExamsByTeacher(teacherId:number) {
-  let object = [];
   let list=[];
   const teacher = await teacherService.getTeacherByID(teacherId);
   const exams = await getRepository(Exam).find({
@@ -51,17 +50,20 @@ export async function getExamsByTeacher(teacherId:number) {
   for(let i=0; i<exams.length; i++){
     const subject = await subjectService.getSubjectByID(exams[i].subjectid);
     const category = await categoryService.getCategoryByID(exams[i].categoryid);
-    object.push(exams[i]);
-    object.push(subject);
-    object.push(category);
-    object.push(teacher);
-    list.push(object)
+    let object = {
+      name:exams[i].name,
+      link:exams[i].link,  
+      subject:subject,
+      category:category,
+      teacher:teacher
+    };
+    list.push(object);
   }
   return list;
 }
 
 export async function getExamsBySubject(subjectId:number) {
-  let object = [];
+  
   let list = [];
   const subject = await subjectService.getSubjectByID(subjectId);
   const exams = await getRepository(Exam).find({
@@ -72,11 +74,14 @@ export async function getExamsBySubject(subjectId:number) {
   for(let i=0; i<exams.length; i++){
     const teacher = await teacherService.getTeacherByID(exams[i].teacherid);
     const category = await categoryService.getCategoryByID(exams[i].categoryid);
-    object.push(exams[i]);
-    object.push(subject);
-    object.push(category);
-    object.push(teacher);
-    list.push(object)
+    let object = {
+      name:exams[i].name,
+      link:exams[i].link,  
+      subject:subject,
+      category:category,
+      teacher:teacher
+    };
+    list.push(object);
   }
   return list;
 }
