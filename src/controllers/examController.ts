@@ -26,3 +26,26 @@ export async function createExam(req: Request, res: Response) {
     return res.sendStatus(500);
   }
 }
+
+export async function getExamsByTeacher (req: Request, res: Response) {
+  try {
+    const teacher = await examService.getExamsByTeacher(parseInt(req.params.idProfessor));
+    console.log(teacher);
+    res.send(teacher);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+}
+
+export async function getExamsBySubject (req: Request, res: Response) {
+  try {
+    const subject = await examService.getExamsBySubject(parseInt(req.params.idDisciplina));
+    console.log(subject);
+    res.send(subject);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+}
+

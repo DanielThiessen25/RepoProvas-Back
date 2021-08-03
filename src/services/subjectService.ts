@@ -24,6 +24,15 @@ export async function getAllSubjects() {
     return object;
 }
 
+export async function getSubjectByID(SubjectID: number) {
+    const id = await getRepository(Subject).find({
+        where: {
+            id: SubjectID
+        }
+    });
+
+    return id[0];
+}
 
 
 

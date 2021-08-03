@@ -14,6 +14,16 @@ export async function getTeacher(teacherName: string) {
     return id[0].id;
 }
 
+export async function getTeacherByID(teacherID: number) {
+    const id = await getRepository(Teacher).find({
+        where: {
+            id: teacherID
+        }
+    });
+
+    return id[0];
+}
+
 export async function getAllTeachers() {
     const id = await getRepository(Teacher).find({});
     let object = [];

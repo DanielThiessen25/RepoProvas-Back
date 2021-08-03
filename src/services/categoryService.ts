@@ -19,4 +19,13 @@ export async function getAllPeriods() {
     return id;
 }
 
+export async function getCategoryByID(categoryID: number) {
+    const id = await getRepository(Category).find({
+        where: {
+            id: categoryID
+        }
+    });
+
+    return id[0];
+}
 
