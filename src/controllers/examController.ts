@@ -29,11 +29,12 @@ export async function createExam(req: Request, res: Response) {
 
 export async function getExamsByTeacher (req: Request, res: Response) {
   try {
-    const teacher = await examService.getExamsByTeacher(parseInt(req.params.idProfessor));
+    const teacher = await examService.getExamsByTeacher(parseInt(req.params.idProf));
     console.log(teacher);
     res.send(teacher);
   } catch (err) {
     console.error(err);
+    res.send(err);
     res.sendStatus(500);
   }
 }
@@ -45,6 +46,7 @@ export async function getExamsBySubject (req: Request, res: Response) {
     res.send(subject);
   } catch (err) {
     console.error(err);
+    res.send(err);
     res.sendStatus(500);
   }
 }
