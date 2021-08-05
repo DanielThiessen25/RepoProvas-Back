@@ -53,9 +53,9 @@ export async function getExamsByTeacher(teacherId:number) {
     let object = {
       name:exams[i].name,
       link:exams[i].link,  
-      subject:subject,
-      category:category,
-      teacher:teacher
+      subject:subject.name,
+      category:category.name,
+      teacher:teacher.name
     };
     list.push(object);
   }
@@ -77,9 +77,9 @@ export async function getExamsBySubject(subjectId:number) {
     let object = {
       name:exams[i].name,
       link:exams[i].link,  
-      subject:subject,
-      category:category,
-      teacher:teacher
+      subject:subject.name,
+      category:category.name,
+      teacher:teacher.name
     };
     list.push(object);
   }
