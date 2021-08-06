@@ -8,12 +8,10 @@ export async function createExam () {
     name: "teste",
     category:"P1",
     url:"https://google.com",
-    teacher:"Carla",
+    teacher:"João",
     subject:"Cálculo"
 }
 const response = await supertest(app).post("/enviar").send(body);
 
-await getRepository(Exam).save(response.body);
-
-  return response;
+return response;
 }

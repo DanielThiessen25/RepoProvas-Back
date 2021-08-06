@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity("periods")
-export default class Category {
+export default class Period {
   @PrimaryGeneratedColumn()
   id: number;
 

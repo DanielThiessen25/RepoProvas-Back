@@ -16,14 +16,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+
+export async function init () {
+  await connectDatabase();
 app.post("/enviar", examController.createExam);
 app.get("/professores", teacherController.getAllTeachers);
 app.get("/disciplinas", subjectController.getAllSubjects);
 app.get("/professores/:idProf", examController.getExamsByTeacher);
 app.get("/disciplinas/:idDisciplina", examController.getExamsBySubject);
-
-export async function init () {
-  await connectDatabase();
 }
 
 export default app;
